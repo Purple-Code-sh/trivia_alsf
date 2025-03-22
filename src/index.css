@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+  --background: oklch(96.12% 0 0);
+  --foreground: oklch(13.92% 0.045 140.24);
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-txt: oklch(13.92% 0.045 140.24);
+  --color-txt-200: oklch(16.87% 0.0791 314.39);
+  --color-primary: oklch(75.1% 0.1696 318.69);
+  --color-secondary: oklch(47.92% 0.1985 349.84);
+  --color-accent-orange: oklch(76.67% 0.1634 71.94);
+  --color-accent-red: oklch(56.02% 0.2239 23.18);
+
+  --font-redHat: "Red Hat Text", sans-serif;
+  --font-urbanist: "Urbanist", sans-serif;
+  --font-playwrite: "Playwrite NG Modern", cursive;
+}
+
+@utility container {
+  padding-inline: 1rem;
+  margin-inline: auto;
+
+  @variant sm {
+    padding-inline: 1.5rem;
+  }
+
+  @variant md {
+    padding-inline: 2rem;
+  }
+
+  @variant lg {
+    padding-inline: 2.5rem;
+  }
+
+  @variant xl {
+    padding-inline: 3rem;
+  }
+
+  @variant 2xl {
+    padding-inline: 4rem;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Red Hat Text", ui-sans-serif, system-ui, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+}
