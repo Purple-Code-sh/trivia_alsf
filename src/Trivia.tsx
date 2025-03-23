@@ -183,6 +183,7 @@ export default function Trivia() {
           <div className="text-center">
             <PiTrophy className="text-yellow-500 text-8xl mx-auto mb-6 animate-bounce" />
             <h2 className='text-secondary text-center text-2xl md:text-3xl xl:text-4xl font-urbanist font-semibold mb-4'>¡Cuestionario completado!</h2>
+            <h3 className='text-secondary text-center text-lg md:text-2xl xl:text-3xl font-urbanist mb-4'>Gracias por contestarlo</h3>
             <p className='text-txt-200 text-lg md:text-xl'>Tu puntuación final:</p>
             <p className='text-primary text-4xl md:text-5xl font-bold my-4'>{score} / {questions.length}</p>
             <p className='text-txt-200 text-lg md:text-xl mb-8'>
