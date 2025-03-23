@@ -15,7 +15,7 @@ function App() {
           <div className="absolute bottom-32 -left-64 -z-10 w-md h-1/2 animate-pulse rounded-full bg-gradient-to-tr from-background via-pink-300 to-primary opacity-40 blur-3xl" />
           <div className="absolute top-28 -right-28 lg:right-28 xl:right-72 -z-10 w-80 h-80 animate-pulse rounded-full bg-gradient-to-tr from-background via-primary to-secondary opacity-40 blur-3xl" />
 
-          <div className='container flex flex-col lg:flex-row py-6 mx-auto gap-8'>
+          <div className='container flex flex-col lg:flex-row py-6 mx-auto gap-0'>
             <div className='w-full lg:w-1/2 flex flex-col justify-center items-center lg:items-start gap-8 sm:gap-16'>
               <h1 className='text-secondary mb-2 lg:mb-4 xl:mb-6 text-center leading-20 lg:text-left font-playwrite font-bold text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl'>
                 Ley del <span className='text-accent-orange'>Efecto</span>
