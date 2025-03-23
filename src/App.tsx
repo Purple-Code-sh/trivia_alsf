@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Trivia from './Trivia'
 import heroPerson from './assets/heroPerson.png'
 
-const GOOGLE_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxxeemtkSS1HYD7J_caki-ei4pw2p3q2KvCtOxlo8bqgYF16RpiUsMkWy0vyNq51Nsu/exec';
+const GOOGLE_ENDPOINT = import.meta.env.VITE_GOOGLE_ENDPOINT;
 
 function App() {
   const [hasStarted, setHasStarted] = useState(false)
