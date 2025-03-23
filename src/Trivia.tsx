@@ -68,17 +68,17 @@ export default function Trivia() {
 
 
   return (
-    <section className=' w-screen relative overflow-hidden py-12 md:py-16 lg:py-20 border min-h-[100vh] flex flex-col items-center'>
-      <div className="container flex flex-col items-center justify-center gap-8 md:gap-16 lg:gap-24">
+    <section className=' w-screen relative overflow-hidden py-8 md:py-12 lg:py-16 border min-h-[100vh] flex flex-col items-center'>
+      <div className="container flex flex-col items-center justify-center gap-8 md:gap-10 lg:gap-16 xl:gap-20 2xl:gap-24">
         <h2 className='text-secondary text-center text-xl md:text-2xl xl:text-3xl font-urbanist font-semibold'>{currentQuestion + 1}. {questions[currentQuestion].question}</h2>
-        <div className='flex flex-wrap gap-8 md:gap-16 lg:gap-24 w-full items-stretch  justify-center'>
+        <div className='flex flex-wrap gap-8 lg:gap-16 xl:gap-20 2xl:gap-24 w-full items-stretch  justify-center'>
 
-          <button className={`bg-white p-6 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300  w-full max-w-[460px] flex flex-col items-center justify-start gap-6 md:gap-8 lg:gap-12 ${optionSelected === questions[currentQuestion].correctAnswer ? ' outline-green-500' : ' outline-accent-red'} ${hasSelected === 'a' ? ' outline-4 ' : ' outline-0'} ${optionSelected === 'a' && hasSelected === '' ? ' outline-4 outline-primary' : ' outline-0'}`} onClick={() => setOptionSelected('a')}>
+          <button className={`bg-white px-8 py-12 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300  w-full max-w-[400px] xl:max-w-[500px] flex flex-col items-center justify-start gap-6 md:gap-8 lg:gap-12 ${optionSelected === questions[currentQuestion].correctAnswer ? ' outline-green-500' : ' outline-accent-red'} ${hasSelected === 'a' ? ' outline-4 ' : ' outline-0'} ${optionSelected === 'a' && hasSelected === '' ? ' outline-4 outline-primary' : ' outline-0'}`} onClick={() => setOptionSelected('a')}>
             <h3 className='text-primary text-6xl pt-6 lg:text-7xl font-black animate-[bounce_6s_infinite]'>A</h3>
             <p className='text-txt-200 text-center text-base md:text-lg xl:text-xl font-urbanist font-medium'>{questions[currentQuestion].answerA}</p>
           </button>
 
-          <button className={`bg-white p-6 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300  w-full max-w-[460px] flex flex-col items-center justify-start gap-6 md:gap-8 lg:gap-12 ${optionSelected === questions[currentQuestion].correctAnswer ? ' outline-green-500' : ' outline-accent-red'} ${hasSelected === 'b' ? ' outline-4' : ' outline-0'} ${optionSelected === 'b' && hasSelected === '' ? ' outline-4 outline-primary' : ' outline-0'}`} onClick={() => setOptionSelected('b')}>
+          <button className={`bg-white px-6 py-12 rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300  w-full max-w-[400px] xl:max-w-[500px] flex flex-col items-center justify-start gap-6 md:gap-8 lg:gap-12 ${optionSelected === questions[currentQuestion].correctAnswer ? ' outline-green-500' : ' outline-accent-red'} ${hasSelected === 'b' ? ' outline-4' : ' outline-0'} ${optionSelected === 'b' && hasSelected === '' ? ' outline-4 outline-primary' : ' outline-0'}`} onClick={() => setOptionSelected('b')}>
             <h3 className='text-primary text-6xl pt-6 lg:text-7xl font-black animate-[bounce_6s_infinite]'>B</h3>
             <p className='text-txt-200 text-center text-base md:text-lg xl:text-xl font-urbanist font-medium'>{questions[currentQuestion].answerB}</p>
           </button>
@@ -93,7 +93,7 @@ export default function Trivia() {
           }} >Responder <PiUserCircleCheck /></button>
         }
 
-        {hasAnswered && <button className={`bg-accent-orange py-4 px-12 hover:scale-110 flex gap-4 items-center justify-center active:underline transition-all duration-300 rounded-4xl underline-offset-4 cursor-pointer text-txt-200 font-semibold font-urbanist text-2xl`} onClick={() => {
+        {hasAnswered && <button className={`bg-accent-orange -mt-6 lg:-mt-12 py-4 px-12 hover:scale-110 flex gap-4 items-center justify-center active:underline transition-all duration-300 rounded-4xl underline-offset-4 cursor-pointer text-txt-200 font-semibold font-urbanist text-2xl`} onClick={() => {
           setCurrentQuestion(currentQuestion + 1)
           setHasAnswered(false)
           setHasSelected('')

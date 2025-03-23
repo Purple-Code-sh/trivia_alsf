@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Trivia from './Trivia'
+import heroPerson from './assets/heroPerson.png'
 
 function App() {
   const [hasStarted, setHasStarted] = useState(false)
@@ -38,7 +39,7 @@ function App() {
 
             <div className='w-full lg:w-1/2 flex flex-col items-center justify-center'>
 
-              <img src="/src/assets/heroPerson.png" alt="hero_bg" className=" w-full h-auto object-fit" />
+              <img src={heroPerson} alt="hero_bg" className=" w-full h-auto object-fit" />
 
             </div>
 

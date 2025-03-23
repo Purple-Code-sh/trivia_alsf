@@ -19,5 +19,7 @@ export default defineConfig({
       "@": root,
     } as AliasOptions,
   },
+  base: 'https://Purple-Code-sh.github.io/trivia_alsf/',
+  
 })
 
