@@ -10,7 +10,7 @@ export default function Trivia() {
   const questions = [
     {
 
-      question: 'Tú que eres un docente cuyos alumnos suelen entregar las tareas con atrasos, ¿cómo aplicarías la ley de efecto para incrementar la puntualidad de entrega?',
+      question: 'Pon tus conocimientos en práctica, Tú que eres un docente cuyos alumnos suelen entregar las tareas con atrasos, ¿cómo aplicarías la ley de efecto para incrementar la puntualidad de entrega?',
       answerA: 'Una charla de la puntualidad como virtud y establecer fechas y plazos de entrega más largos',
       answerB: 'Otorgar una pequeña calificación adicional o una mención positiva cada vez que sean puntuales',
       correctAnswer: 'b',
@@ -18,7 +18,7 @@ export default function Trivia() {
     },
     {
 
-      question: 'Tú eres un docente de Primaria que se ha dado cuenta de que muy pocos niños levantan la mano para participar o responder en clase. ¿Cómo aplicarías la ley de efecto para motivar la conducta de participar?',
+      question: 'Pon tus conocimientos en práctica, Tú eres un docente de Primaria que se ha dado cuenta de que muy pocos niños levantan la mano para participar o responder en clase. ¿Cómo aplicarías la ley de efecto para motivar la conducta de participar?',
       answerA: 'Preguntas directas a aquellos estudiantes que no participan y motivar las actividades del grupo para que todos puedan ser escuchados.',
       answerB: 'Motivar las actividades del grupo, elogiar la participación del niño y reconocer públicamente su esfuerzo.',
       correctAnswer: 'b',
