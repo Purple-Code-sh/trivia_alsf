@@ -19,7 +19,11 @@ permissions:
 concurrency:
   group: 'pages'
   cancel-in-progress: true
-
+  
+#Allow repo secrets
+env:
+  VITE_GOOGLE_ENDPOINT: ${{ secrets.VITE_GOOGLE_ENDPOINT }}
+  
 jobs:
   # Single deploy job since we're just deploying
   deploy:
