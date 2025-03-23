@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { PiArrowFatLinesRight, PiUserCircleCheck, PiTrophy } from "react-icons/pi";
 
 export default function Trivia() {
@@ -14,6 +14,11 @@ export default function Trivia() {
   const [score, setScore] = useState(0)
   // State to check if the quiz is completed
   const [isCompleted, setIsCompleted] = useState(false)
+
+  // References for scrolling
+  const questionRef = useRef(null);
+  const answerButtonRef = useRef(null);
+  const nextButtonRef = useRef(null);
 
   // Questions data array
   const questions = [
@@ -68,6 +73,30 @@ export default function Trivia() {
     }
   ];
 
+  // Effect to scroll to question when it changes
+  useEffect(() => {
+    if (questionRef.current) {
+      questionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [currentQuestion]);
+
+  // Effect to scroll to answer button when an option is selected
+  useEffect(() => {
+    if (optionSelected !== '' && answerButtonRef.current) {
+      setTimeout(() => {
+        answerButtonRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
+    }
+  }, [optionSelected]);
+
+  useEffect(() => {
+    if (hasAnswered && nextButtonRef.current) {
+      setTimeout(() => {
+        nextButtonRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
+    }
+  }, [hasAnswered]);
+
   // Calculate if the current answer is correct
   const isCurrentAnswerCorrect = hasSelected === questions[currentQuestion].correctAnswer;
 
@@ -107,7 +136,7 @@ export default function Trivia() {
   };
 
   // Helper function to determine button style based on selection state
-  const getButtonStyle = (option: string) => {
+  const getButtonStyle = (option) => {
     // If user has not answered yet
     if (!hasAnswered) {
       return optionSelected === option ? 'outline-4 outline-primary' : 'outline-0';
@@ -157,19 +186,20 @@ export default function Trivia() {
 
   return (
     <section className='w-screen relative overflow-hidden py-8 md:py-12 lg:py-16 border min-h-[100vh] flex flex-col items-center'>
-      <div className="container flex flex-col items-center justify-center gap-8 md:gap-10 lg:gap-16 xl:gap-20 2xl:gap-24">
+      <div ref={questionRef} className="container flex flex-col items-center justify-center gap-8 md:gap-10 lg:gap-16 xl:gap-20 2xl:gap-24">
         {/* Progress indicator */}
         <div className="w-full flex justify-between items-center px-4 md:px-8">
-          <p className="text-txt-200 font-urbanist">
+          <p className="text-txt-200/80 font-urbanist">
             Pregunta {currentQuestion + 1} de {questions.length}
           </p>
-          <p className="text-primary font-urbanist font-bold">
-            Puntuación: {score}
-          </p>
+          {/* Removed score display during the quiz */}
         </div>
 
-        {/* Question text */}
-        <h2 className='text-secondary text-center text-xl md:text-2xl xl:text-3xl font-urbanist font-semibold'>
+        {/* Question text with ref for scrolling */}
+        <h2
+
+          className='text-secondary text-center text-xl md:text-2xl xl:text-3xl font-urbanist font-semibold'
+        >
           {currentQuestion + 1}. {questions[currentQuestion].question}
         </h2>
 
@@ -208,9 +238,10 @@ export default function Trivia() {
           </div>
         )}
 
-        {/* Answer button */}
+        {/* Answer button with ref for scrolling */}
         {!hasAnswered && (
           <button
+            ref={answerButtonRef}
             className={`bg-secondary py-4 px-12 flex gap-4 items-center justify-center hover:scale-110 active:underline transition-all duration-300 rounded-4xl underline-offset-4 cursor-pointer text-white font-semibold font-urbanist text-2xl ${optionSelected !== '' ? 'visible' : 'invisible'}`}
             onClick={handleAnswer}
           >
@@ -221,6 +252,7 @@ export default function Trivia() {
         {/* Next button */}
         {hasAnswered && (
           <button
+            ref={nextButtonRef}
             className={`bg-accent-orange -mt-6 lg:-mt-12 py-4 px-12 hover:scale-110 flex gap-4 items-center justify-center active:underline transition-all duration-300 rounded-4xl underline-offset-4 cursor-pointer text-txt-200 font-semibold font-urbanist text-2xl`}
             onClick={handleNext}
           >
