@@ -73,10 +73,18 @@ export default function Trivia() {
     }
   ];
 
+  // Function to reload the page
+  const handleNoThanks = () => {
+    window.location.reload();
+  };
+
   // Effect to scroll to question when it changes
   useEffect(() => {
     if (questionRef.current) {
-      questionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      (questionRef.current as HTMLElement).scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
     }
   }, [currentQuestion]);
 
@@ -84,7 +92,13 @@ export default function Trivia() {
   useEffect(() => {
     if (optionSelected !== '' && answerButtonRef.current) {
       setTimeout(() => {
-        answerButtonRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Verificar nuevamente dentro del timeout
+        if (answerButtonRef.current) {
+          (answerButtonRef.current as HTMLElement).scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+          });
+        }
       }, 100);
     }
   }, [optionSelected]);
@@ -92,7 +106,12 @@ export default function Trivia() {
   useEffect(() => {
     if (hasAnswered && nextButtonRef.current) {
       setTimeout(() => {
-        nextButtonRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        if (nextButtonRef.current) {
+          (nextButtonRef.current as HTMLElement).scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+          });
+        }
       }, 100);
     }
   }, [hasAnswered]);
@@ -136,7 +155,7 @@ export default function Trivia() {
   };
 
   // Helper function to determine button style based on selection state
-  const getButtonStyle = (option) => {
+  const getButtonStyle = (option: string) => {
     // If user has not answered yet
     if (!hasAnswered) {
       return optionSelected === option ? 'outline-4 outline-primary' : 'outline-0';
@@ -172,12 +191,20 @@ export default function Trivia() {
                   score >= questions.length * 0.5 ? 'Buen intento. Hay algunos conceptos que podrías repasar.' :
                     'Recomendamos revisar los conceptos nuevamente para mejorar tu comprensión.'}
             </p>
-            <button
-              className="bg-secondary py-4 px-12 hover:scale-110 active:underline transition-all duration-300 rounded-4xl underline-offset-4 cursor-pointer text-white font-semibold font-urbanist text-2xl"
-              onClick={handleRestart}
-            >
-              Reintentar cuestionario
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center px-2">
+              <button
+                className="bg-secondary py-4 px-12 hover:scale-110 active:underline transition-all duration-300 rounded-4xl underline-offset-4 cursor-pointer text-white font-semibold font-urbanist text-xl"
+                onClick={handleRestart}
+              >
+                Reintentar cuestionario
+              </button>
+              <button
+                className="bg-gray-200 py-4 px-12 hover:scale-110 active:underline transition-all duration-300 rounded-4xl underline-offset-4 cursor-pointer text-txt-200/50 font-semibold font-urbanist text-xl flex items-center justify-center gap-2"
+                onClick={handleNoThanks}
+              >
+                No, gracias
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -197,7 +224,6 @@ export default function Trivia() {
 
         {/* Question text with ref for scrolling */}
         <h2
-
           className='text-secondary text-center text-xl md:text-2xl xl:text-3xl font-urbanist font-semibold'
         >
           {currentQuestion + 1}. {questions[currentQuestion].question}
@@ -242,7 +268,7 @@ export default function Trivia() {
         {!hasAnswered && (
           <button
             ref={answerButtonRef}
-            className={`bg-secondary py-4 px-12 flex gap-4 items-center justify-center hover:scale-110 active:underline transition-all duration-300 rounded-4xl underline-offset-4 cursor-pointer text-white font-semibold font-urbanist text-2xl ${optionSelected !== '' ? 'visible' : 'invisible'}`}
+            className={`bg-secondary py-4 px-16 flex gap-4 items-center justify-center hover:scale-110 active:underline transition-all duration-300 rounded-4xl underline-offset-4 cursor-pointer text-white font-bold font-urbanist text-xl ${optionSelected !== '' ? 'visible' : 'invisible'}`}
             onClick={handleAnswer}
           >
             Responder <PiUserCircleCheck />
@@ -253,7 +279,7 @@ export default function Trivia() {
         {hasAnswered && (
           <button
             ref={nextButtonRef}
-            className={`bg-accent-orange -mt-6 lg:-mt-12 py-4 px-12 hover:scale-110 flex gap-4 items-center justify-center active:underline transition-all duration-300 rounded-4xl underline-offset-4 cursor-pointer text-txt-200 font-semibold font-urbanist text-2xl`}
+            className={`bg-accent-orange -mt-6 lg:-mt-12 py-4 px-16 hover:scale-110 flex gap-4 items-center justify-center active:underline transition-all duration-300 rounded-4xl underline-offset-4 cursor-pointer text-txt-200 font-bold font-urbanist text-xl`}
             onClick={handleNext}
           >
             {currentQuestion === questions.length - 1 ? 'Ver resultados' : 'Siguiente'} <PiArrowFatLinesRight />
