@@ -23,55 +23,56 @@ export default function Trivia() {
   // Questions data array
   const questions = [
     {
-      question: 'Pon tus conocimientos en práctica, Tú que eres un docente cuyos alumnos suelen entregar las tareas con atrasos, ¿cómo aplicarías la ley de efecto para incrementar la puntualidad de entrega?',
-      answerA: 'Una charla de la puntualidad como virtud y establecer fechas y plazos de entrega más largos',
-      answerB: 'Otorgar una pequeña calificación adicional o una mención positiva cada vez que sean puntuales',
+      question: 'El aprendizaje experiencial tiene sus bases en....',
+      answerA: 'El aprendizaje experiencial se basa principalmente en el conductismo',
+      answerB: 'El aprendizaje experiencial se fundamenta en el constructivismo',
       correctAnswer: 'b',
-      note: 'La respuesta correcta es B. La recompensa (consecuencia positiva) aumenta la probabilidad de que el alumno siga entregando la tarea a tiempo.'
+      note: 'La respuesta correcta es B) Desde la perspectiva constructivista, el conocimiento no se “transmite” de manera pasiva, sino que se va “construyendo” activamente a partir de la interacción con el entorno y la reflexión sobre la propia experiencia.'
     },
     {
-      question: 'Pon tus conocimientos en práctica, Tú eres un docente de Primaria que se ha dado cuenta de que muy pocos niños levantan la mano para participar o responder en clase. ¿Cómo aplicarías la ley de efecto para motivar la conducta de participar?',
-      answerA: 'Preguntas directas a aquellos estudiantes que no participan y motivar las actividades del grupo para que todos puedan ser escuchados.',
-      answerB: 'Motivar las actividades del grupo, elogiar la participación del niño y reconocer públicamente su esfuerzo.',
+      question: 'La experiencia concreta (Se vive una situación o se realiza una actividad específica) es el primer paso dentro del diagrama del aprendizaje experiencial de Kolb, si tú fueras docente universitario ¿cómo aplicarías la experiencia concreta?',
+      answerA: 'Iniciando la clase con una lectura teórica detallada del tema, seguida de una explicación magistral para que los estudiantes comprendan bien los conceptos antes de tener cualquier tipo de experiencia',
+      answerB: 'Simulaciones o role-playing, recrear situaciones profesionales, por ejemplo, una negociación en clase de negocios o un juicio simulado para estudiantes de Derecho',
       correctAnswer: 'b',
-      note: 'La respuesta correcta es B. El elogio (consecuencia satisfactoria) fortalece la conducta, por lo que la estudiante tenderá a levantar la mano y participar un poco más en el futuro.'
+      note: 'La respuesta correcta es B) El objetivo es que el estudiante “viva” de primera mano el contenido, no solo lo escuche o lea.'
     },
     {
-      question: 'Pon tus conocimientos en práctica, Trabajas en recursos humanos y necesitas dar solución a la siguiente problemática: algunos empleados olvidan registrar sus horas diarias de trabajo. ¿Cómo aplicarías la ley de efecto para que cumplan con este proceso?',
-      answerA: 'Otorgar mensualmente un reconocimiento simbólico (por ejemplo, "Registro Perfecto")',
-      answerB: 'Enviar recordatorios masivos',
+      question: 'La observación y reflexión (analizas lo que sucedió en la experiencia, observas de cerca lo que hiciste, cómo te sentiste y qué resultados obtuviste) es el segundo paso dentro del diagrama del aprendizaje experiencial de Kolb, si tú fueras docente universitario ¿cómo aplicarías esta etapa?',
+      answerA: 'Después de la experiencia, facilitar un espacio de discusión y preguntar “¿Qué notaron? ¿Qué problemas enfrentaron? ¿Cómo los solucionaron?”',
+      answerB: 'Pidiendo a los estudiantes que repitan varias veces la misma actividad hasta que la hagan bien, sin necesidad de detenerse a analizar sus errores',
       correctAnswer: 'a',
-      note: 'La respuesta correcta es A. Al recompensar de forma positiva, se fortalece la conducta de registrar puntualmente las horas de trabajo.'
+      note: 'La respuesta correcta es A) Sin reflexión, el aprendizaje experiencial pierde su profundidad y se vuelve meramente mecánico.'
     },
     {
-      question: 'Pon tus conocimientos en práctica, Tú eres un docente de Primaria cuyos alumnos están aumentando día con día el número de groserías que escuchas en clase. ¿Cómo aplicarías la ley de efecto para extinguir esta conducta?',
-      answerA: 'Reforzar con atención y preguntas a los alumnos justo después de que digan una grosería, para entender su intención',
-      answerB: 'Retirarle un privilegio cada vez que emplee un lenguaje ofensivo',
+      question: 'La conceptualización abstracta (Convertir esa observación en aprendizajes o conclusiones más generales) es el tercer paso dentro del diagrama del aprendizaje experiencial de Kolb, si tú fueras docente universitario ¿cómo aplicarías esta etapa?',
+      answerA: 'Entregando a los estudiantes un resumen con las conclusiones ya elaboradas por expertos',
+      answerB: 'Invitar a los estudiantes a analizar datos o resultados, identificando patrones y posibles explicaciones generales',
       correctAnswer: 'b',
-      note: 'La respuesta correcta es B. El castigo (pérdida de un privilegio) disminuye la probabilidad de que el niño siga usando expresiones ofensivas, al asociarse con una consecuencia negativa inmediata.'
+      note: 'La respuesta correcta es B) Aquí los estudiantes entienden “por qué” ocurrió lo que ocurrió, y vinculan la experiencia con conceptos más amplios o abstractos.'
     },
     {
-      question: 'Pon tus conocimientos en práctica, trabajas en un programa de salud en el que se busca que los adultos mayores realicen caminatas diarias. ¿Cómo usarías la ley de efecto para incrementar y mantener la rutina de ejercicio?',
-      answerA: 'Crear grupos para reconocer los logros semanales (por ejemplo, otorgar un "sello de constancia").',
-      answerB: 'Concientización y psicoeducación acerca de los beneficios de las caminatas y enviarles recordatorios constantes sobre los peligros de no hacer ejercicio.',
+      question: 'La experimentación activa (Poner en práctica lo que aprendiste) es el ultimo paso dentro del diagrama del aprendizaje experiencial de Kolb, si tú fueras docente universitario ¿cómo aplicarías esta etapa?',
+      answerA: 'preguntar y reflexionar con el estudiante ¿cómo aplicarías estos conocimientos en tu vida diaria?',
+      answerB: 'pedir un ensayo sobre lo que aprendieron, ya que escribir sobre el tema les permitirá demostrar su comprensión',
       correctAnswer: 'a',
-      note: 'La respuesta correcta es A. Al otorgar una consecuencia agradable (compañía, reconocimiento público o personal), se incrementa la probabilidad de que el paciente continúe con la conducta de caminar diariamente.'
+      note: 'La respuesta correcta es A)'
     },
     {
-      question: 'Pon tus conocimientos en práctica, eres una psicóloga organizacional que trabaja en capacitación de personal, durante un curso de capacitación en tu empresa, algunos participantes no participan en los debates grupales. ¿Cómo utilizar la ley de efecto para incrementar su participación?',
-      answerA: 'Preguntarles directamente y otorgar retroalimentación positiva a quienes compartan sus ideas en el debate',
-      answerB: 'Llamar la atención públicamente a quienes no participan para generar presión grupal.',
+      question: 'En el modelo de aprendizaje experiencial de Kolb se proponen cuatro roles docentes (facilitador, experto, evaluador y coach) que el profesor puede asumir para guiar eficazmente el aprendizaje. Si tú fueras un docente y quisieras proporcionar una base teórica y conocimientos especializados a tus alumnos, para después crear un entorno propicio para que los estudiantes se comprometan con la experiencia y animarlos a la participación activa ¿qué roles desempeñarías?',
+      answerA: 'El/la Experto(a) y El/la Facilitador(a)',
+      answerB: 'El/la Evaluador(a) y El/la Coach',
       correctAnswer: 'a',
-      note: 'La respuesta correcta es A. Reconocer abiertamente las contribuciones valiosas fortalece el deseo de participar, pues recibir retroalimentación positiva actúa como refuerzo.'
+      note: 'La respuesta correcta es A)'
     },
     {
-      question: 'Pon tus conocimientos en práctica, eres una profesora universitaria dando tu clase teórica en un día regular y un estudiante interrumpe constantemente la clase hablando sin permiso. ¿Cómo aplicarías la ley de efecto para extinguir esta conducta?',
-      answerA: 'Reconocer de forma positiva a los alumnos que permanecen en silencio y siguen las reglas.',
-      answerB: 'Aplicar una consecuencia negativa inmediata, como quitarle un punto de la calificación de conducta cada vez que interrumpa.',
+      question: 'En el modelo de aprendizaje experiencial de Kolb se proponen cuatro roles docentes (facilitador, experto, evaluador y coach) que el profesor puede asumir para guiar eficazmente el aprendizaje. Si tú fueras un docente que busca establecer criterios claros de rendimiento y ofrecer retroalimentación, para orientar a los estudiantes a aplicar de manera activa lo que han aprendido ¿qué roles desempeñarías?',
+      answerA: 'El/la Experto(a) y El/la Facilitador(a)',
+      answerB: 'El/la Evaluador(a) y El/la Coach',
       correctAnswer: 'b',
-      note: 'La respuesta correcta es B. El retiro de puntos actúa como castigo y aumenta la posibilidad de reducir la conducta de interrumpir, pues se asocia a un efecto desfavorable.'
+      note: 'La respuesta correcta es B)'
     }
   ];
+
 
   // Function to reload the page
   const handleNoThanks = () => {
